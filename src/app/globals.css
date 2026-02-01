@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  /* Pune Heritage Palette: Saffron, Royal Gold, Charcoal, Silk White */
+  --saffron: #FF9933;
+  --royal-gold: #D4AF37;
+  --charcoal: #333333;
+  --silk-white: #F9F9F9;
+
+  --background: var(--silk-white);
+  --foreground: var(--charcoal);
+  --primary: var(--saffron);
+  --accent: var(--royal-gold);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1a1a;
+    --foreground: #f0f0f0;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, var(--saffron) 0%, #FFCC33 100%);
+}
+
+.silk-border {
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
