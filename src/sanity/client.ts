@@ -5,7 +5,7 @@ export const client = createClient({
     projectId: "i1awouo7",
     dataset: "production",
     apiVersion: "2024-02-01",
-    useCdn: false, // Set to true for production
+    useCdn: true, // Set to true for production content delivery
 });
 
 const builder = imageUrlBuilder(client);
