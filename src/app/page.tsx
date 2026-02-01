@@ -3,16 +3,16 @@ import Footer from "@/components/ui/Footer";
 import Button from "@/components/ui/Button";
 import ProductCard from "@/components/store/ProductCard";
 import { getDeliveryStatus } from "@/lib/delivery";
+import { client } from "@/sanity/client";
+import { Dress } from "@/lib/types";
+import Link from "next/link";
 
-export default function Home() {
+export const revalidate = 60; // Revalidate every minute
+
+export default async function Home() {
     const delivery = getDeliveryStatus();
-
-    // Mock data for demonstration
-    const mockDresses = [
-        { _id: "1", name: "Royal Silk Anarkali Set", price: 2999, isSoldOut: false, description: "Authentic silk material from Pune vendors." },
-        { _id: "2", name: "Chanderi Cotton Material", price: 1599, isSoldOut: true, description: "Lightweight and elegant for summer." },
-        { _id: "3", name: "Banarasi Handloom Suit", price: 4599, isSoldOut: false, description: "Exquisite hand-woven borders." },
-    ];
+    const query = `*[_type == "dress"] | order(_createdAt desc)[0...3]`;
+    const dresses: Dress[] = await client.fetch(query);
 
     return (
         <div className="min-h-screen">
@@ -32,7 +32,9 @@ export default function Home() {
                             Exquisite dress materials, expert tailoring, and handcrafted accessories. Same-day delivery across Pune.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <Button variant="secondary" className="px-10 py-5 text-lg">Browse Collection</Button>
+                            <Link href="/dresses">
+                                <Button variant="secondary" className="px-10 py-5 text-lg">Browse Collection</Button>
+                            </Link>
                             <div className="flex items-center bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
                                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse mr-3" />
                                 <span className="text-sm font-bold">Secure UPI Payments</span>
@@ -85,20 +87,28 @@ export default function Home() {
                             <p className="text-gray-500 mt-2">Explore our latest dress materials and accessories.</p>
                         </div>
                         <div className="flex gap-2">
-                            <Button variant="outline" className="text-xs px-4 py-2">Dresses</Button>
-                            <Button variant="outline" className="text-xs px-4 py-2">Accessories</Button>
-                            <Button variant="outline" className="text-xs px-4 py-2">Tailoring</Button>
+                            <Link href="/dresses"><Button variant="outline" className="text-xs px-4 py-1">Dresses</Button></Link>
+                            <Link href="/accessories"><Button variant="outline" className="text-xs px-4 py-1">Accessories</Button></Link>
+                            <Link href="/tailoring"><Button variant="outline" className="text-xs px-4 py-1">Tailoring</Button></Link>
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {mockDresses.map((dress) => (
-                            <ProductCard key={dress._id} product={dress as any} type="dress" />
-                        ))}
-                    </div>
+                    {dresses.length > 0 ? (
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {dresses.map((dress) => (
+                                <ProductCard key={dress._id} product={dress} type="dress" />
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="py-20 text-center bg-gray-50 rounded-3xl border-2 border-dashed border-gray-200">
+                            <h3 className="text-xl font-bold text-gray-400 uppercase tracking-widest">Restocking Fresh Silk...</h3>
+                        </div>
+                    )}
 
                     <div className="mt-16 text-center">
-                        <Button variant="outline" className="px-12">View All Collection</Button>
+                        <Link href="/dresses">
+                            <Button variant="outline" className="px-12">View All Collection</Button>
+                        </Link>
                     </div>
                 </div>
             </section>
