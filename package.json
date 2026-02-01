@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "pages:build": "npx @cloudflare/next-on-pages",
-    "pages:deploy": "npm run pages:build && wrangler pages deploy .verification",
+    "pages:deploy": "npm run pages:build && wrangler pages deploy .vercel/output",
     "pages:watch": "npx @cloudflare/next-on-pages --watch",
     "start": "next start",
     "lint": "next lint"
