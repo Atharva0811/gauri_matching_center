@@ -5,6 +5,8 @@ export interface Dress {
     price: number;
     description?: string;
     isSoldOut: boolean;
+    isTrending?: boolean;
+    isBestseller?: boolean;
     customizations?: Customization[];
 }
 
@@ -15,6 +17,8 @@ export interface Accessory {
     price: number;
     description?: string;
     isSoldOut: boolean;
+    isTrending?: boolean;
+    isBestseller?: boolean;
 }
 
 export interface Customization {
