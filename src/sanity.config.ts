@@ -7,8 +7,8 @@ export default defineConfig({
     name: "default",
     title: "Pune WhatsApp Store",
 
-    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "i1awouo7",
-    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
+    projectId: "i1awouo7",
+    dataset: "production",
 
     basePath: "/studio",
 
