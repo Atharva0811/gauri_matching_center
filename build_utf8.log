@@ -1,0 +1,51 @@
+﻿   Ôû▓ Next.js 15.1.0
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+cmd : Failed to compile.
+At line:1 char:1
++ cmd /c "npx next build" 
+> build_cmd.log 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (Fai  
+  led to compile.:String   
+ ) [], RemoteException
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+
+./src/app/studio/[[...index
+]]/page.tsx
+Module not found: Can't 
+resolve 
+'../../../../sanity.config'
+
+https://nextjs.org/docs/mes
+sages/module-not-found
+
+./node_modules/@sanity/visu
+al-editing-csm/dist/index.j
+s
+Module not found: Can't 
+resolve 
+'@sanity/client/csm'
+
+https://nextjs.org/docs/mes
+sages/module-not-found
+
+Import trace for requested 
+module:
+./node_modules/@sanity/visu
+al-editing/dist/create-data
+-attribute/index.js
+./node_modules/next-sanity/
+dist/index.js
+./src/sanity/client.ts
+./src/components/store/Prod
+uctCard.tsx
+
+
+> Build failed because of 
+webpack errors

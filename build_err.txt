@@ -1,0 +1,112 @@
+﻿
+> gauri-matching-center@1.0.0 build
+> next build
+
+   Ôû▓ Next.js 15.1.0
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+node.exe : Failed to 
+compile.
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (Fai  
+  led to compile.:String   
+ ) [], RemoteException
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+
+./node_modules/isomorphic-d
+ompurify/index.js
+Module not found: Can't 
+resolve 'jsdom'
+
+https://nextjs.org/docs/mes
+sages/module-not-found
+
+Import trace for requested 
+module:
+./node_modules/sanity/lib/i
+ndex.js
+./sanity.config.ts
+./src/app/studio/[[...index
+]]/page.tsx
+
+./node_modules/@sanity/coml
+ink/dist/index.js
+Attempted import error: 
+'map' is not exported from 
+'rxjs' (imported as 'map').
+
+Import trace for requested 
+module:
+./node_modules/@sanity/coml
+ink/dist/index.js
+./node_modules/sanity/lib/i
+ndex.js
+./sanity.config.ts
+./src/app/studio/[[...index
+]]/page.tsx
+
+./node_modules/@sanity/coml
+ink/dist/index.js
+Attempted import error: 
+'filter' is not exported 
+from 'rxjs' (imported as 
+'filter').
+
+Import trace for requested 
+module:
+./node_modules/@sanity/coml
+ink/dist/index.js
+./node_modules/sanity/lib/i
+ndex.js
+./sanity.config.ts
+./src/app/studio/[[...index
+]]/page.tsx
+
+./node_modules/@sanity/coml
+ink/dist/index.js
+Attempted import error: 
+'map' is not exported from 
+'rxjs' (imported as 'map').
+
+Import trace for requested 
+module:
+./node_modules/@sanity/coml
+ink/dist/index.js
+./node_modules/sanity/lib/i
+ndex.js
+./sanity.config.ts
+./src/app/studio/[[...index
+]]/page.tsx
+
+./node_modules/@sanity/coml
+ink/dist/index.js
+Attempted import error: 
+'bufferCount' is not 
+exported from 'rxjs' 
+(imported as 
+'bufferCount').
+
+Import trace for requested 
+module:
+./node_modules/@sanity/coml
+ink/dist/index.js
+./node_modules/sanity/lib/i
+ndex.js
+./sanity.config.ts
+./src/app/studio/[[...index
+]]/page.tsx
+
+
+> Build failed because of 
+webpack errors
