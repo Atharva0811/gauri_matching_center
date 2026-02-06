@@ -10,6 +10,8 @@ export const client = createClient({
 
 const builder = imageUrlBuilder(client);
 
-export function urlFor(source: any) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function urlFor(source: unknown): any {
+    // @ts-expect-error - source type is unknown but expected by builder.image
     return builder.image(source);
 }

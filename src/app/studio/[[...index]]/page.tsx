@@ -5,7 +5,7 @@ import config from "@/sanity.config";
 
 // Polyfill for Edge Runtime compatibility with certain Sanity internals
 if (typeof globalThis.MessageChannel === "undefined") {
-    // @ts-ignore
+    // @ts-expect-error - MessageChannel polyfill
     globalThis.MessageChannel = class MessageChannel {
         port1 = { postMessage: () => { }, onmessage: null, onmessageerror: null, close: () => { }, addEventListener: () => { }, removeEventListener: () => { }, dispatchEvent: () => false };
         port2 = { postMessage: () => { }, onmessage: null, onmessageerror: null, close: () => { }, addEventListener: () => { }, removeEventListener: () => { }, dispatchEvent: () => false };

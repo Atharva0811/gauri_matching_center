@@ -5,7 +5,7 @@ import Button from "@/components/ui/Button";
 import ProductCard from "@/components/store/ProductCard";
 import { client } from "@/sanity/client";
 import { Accessory } from "@/lib/types";
-import { Sparkles, ArrowRight } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export const revalidate = 60; // Revalidate every minute
 
@@ -67,7 +67,7 @@ export default async function AccessoriesPage() {
                 {/* Engagement Section */}
                 <div className="mt-40 border-t border-slate-100 pt-32 text-center pb-16">
                     <blockquote className="text-3xl md:text-5xl font-heading font-black text-slate-950 tracking-tighter italic max-w-4xl mx-auto mb-16 leading-tight">
-                        "Accessories are the exclamation point of a woman’s outfit. <span className="text-secondary underline decoration-primary/20 decoration-8 underline-offset-4">Make yours bold.</span>"
+                        &quot;Accessories are the exclamation point of a woman&apos;s outfit. <span className="text-secondary underline decoration-primary/20 decoration-8 underline-offset-4">Make yours bold.</span>&quot;
                     </blockquote>
                     <div className="flex flex-wrap justify-center gap-12 md:gap-24">
                         <div className="flex flex-col items-center">

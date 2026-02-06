@@ -24,14 +24,23 @@ export default function Header() {
         { name: "Studio", href: "/studio", desc: "The Authentic Studio Experience" },
     ];
 
+    const categories = [
+        { label: "New Arrivals", href: "/dresses" },
+        { label: "Co-ords", href: "/dresses" },
+        { label: "Suit Sets", href: "/dresses" },
+        { label: "Lehengas", href: "/dresses" },
+        { label: "Handblock", href: "/dresses" },
+        { label: "Silk", href: "/dresses" },
+    ];
+
     return (
         <>
-            <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
-                <div className="container mx-auto px-4 h-20 flex items-center justify-between gap-8">
+            <header className="sticky top-0 z-50 w-full bg-background border-b border-slate-100 shadow-sm transition-premium">
+                <div className="container mx-auto px-4 h-16 flex items-center justify-between gap-6">
                     <Link href="/" className="flex items-center space-x-3 group shrink-0">
-                        <div className="relative w-12 h-12 transition-premium group-hover:scale-105">
+                        <div className="relative w-10 h-10 transition-premium group-hover:scale-105">
                             <Image
-                                src="/logo.png"
+                                src="/logo.webp"
                                 alt="Gauri Matching Center"
                                 fill
                                 className="object-contain"
@@ -39,17 +48,15 @@ export default function Header() {
                             />
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-2xl font-heading font-black tracking-tight text-slate-950 leading-none">
-                                GAURI
+                            <span className="text-lg md:text-2xl font-heading font-black tracking-tight text-foreground leading-none">
+                                Gauri
                             </span>
-                            <span className="text-[10px] font-black tracking-[0.3em] text-secondary uppercase mt-1">
-                                Matching Center
-                            </span>
+                            <span className="text-xs text-secondary font-bold">Matching Center</span>
                         </div>
                     </Link>
 
                     {/* Main Navigation - High Weight */}
-                    <nav className="hidden lg:flex items-center space-x-10 text-[12px] font-black uppercase tracking-[0.2em] text-slate-950">
+                    <nav className="hidden lg:flex items-center space-x-8 text-[12px] font-black uppercase tracking-wide text-foreground">
                         {navLinks.map((link) => (
                             <Link key={link.name} href={link.href} className="hover:text-primary transition-premium relative group py-2">
                                 {link.name}
@@ -63,18 +70,18 @@ export default function Header() {
                         <div className="relative group">
                             <input
                                 type="text"
-                                placeholder="Discover your next masterpiece..."
-                                className="w-full bg-slate-50 border border-slate-200 rounded-full py-2.5 pl-12 pr-4 text-sm font-bold text-slate-900 focus:outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
+                                placeholder="Search fabrics, styles, collections..."
+                                className="w-full bg-white border border-slate-200 rounded-full py-2.5 pl-12 pr-4 text-sm font-bold text-foreground focus:outline-none focus:border-primary focus:bg-white transition-all shadow-sm"
                             />
                             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-primary transition-colors" />
                         </div>
                     </div>
 
                     <div className="flex items-center space-x-4 shrink-0">
-                        <button className="md:hidden p-2.5 hover:bg-slate-100 rounded-full transition-premium text-slate-950">
+                        <button className="md:hidden p-2.5 hover:bg-slate-100 rounded-full transition-premium text-foreground">
                             <Search className="w-5 h-5" />
                         </button>
-                        <button className="p-3 bg-primary/10 hover:bg-primary hover:text-slate-950 rounded-full transition-premium text-primary relative shadow-sm active:scale-95 group">
+                        <button className="p-3 bg-primary/10 hover:bg-primary hover:text-foreground rounded-full transition-premium text-primary relative shadow-sm active:scale-95 group">
                             <ShoppingBag className="w-5 h-5 transition-transform group-hover:-rotate-12" />
                             <span className="absolute -top-1 -right-1 w-5 h-5 bg-accent text-slate-950 text-[10px] font-black flex items-center justify-center rounded-full border-2 border-white shadow-sm">
                                 2
@@ -88,11 +95,28 @@ export default function Header() {
                         </button>
                     </div>
                 </div>
+
+                {/* Categories strip under navigation (horizontal scroll on small screens) */}
+                <div className="w-full border-t border-slate-100 bg-background">
+                    <div className="container mx-auto px-4">
+                        <div className="overflow-x-auto no-scrollbar py-3 -mx-4 px-4">
+                            <div className="flex gap-3 items-center">
+                                {categories.map((c) => (
+                                    <Link key={c.label} href={c.href} className="flex-shrink-0">
+                                        <div className="px-4 py-2 rounded-lg bg-white border border-slate-100 text-sm font-black text-foreground shadow-sm hover:shadow-md transition-premium">
+                                            {c.label}
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </header>
 
             {/* Premium Mobile Menu Slide-over */}
-            <div
-                className={`fixed inset-0 z-[100] transition-opacity duration-500 ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                <div
+                    className={`fixed inset-0 z-[100] transition-opacity duration-500 ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                     }`}
             >
                 {/* Backdrop */}
@@ -103,7 +127,7 @@ export default function Header() {
 
                 {/* Menu Panel */}
                 <div
-                    className={`absolute inset-y-0 right-0 w-full max-w-md bg-white shadow-[0_0_80px_rgba(0,0,0,0.5)] transition-transform duration-500 transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+                    className={`absolute inset-y-0 right-0 w-full max-w-md bg-white shadow-[0_30px_80px_-24px_rgba(2,6,23,0.45)] transition-transform duration-500 transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"
                         }`}
                 >
                     <div className="flex flex-col h-full">
@@ -111,7 +135,7 @@ export default function Header() {
                         <div className="p-6 border-b border-slate-100 flex items-center justify-between">
                             <div className="flex flex-col">
                                 <span className="text-xl font-heading font-black text-slate-950 tracking-tighter uppercase">The Anthology</span>
-                                <span className="text-[10px] font-black tracking-widest text-primary uppercase">Gauri Matching Center</span>
+                                <span className="text-[10px] font-bold text-slate-500">Gauri Matching Center</span>
                             </div>
                             <button
                                 onClick={() => setIsMenuOpen(false)}

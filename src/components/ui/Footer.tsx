@@ -10,14 +10,12 @@ export default function Footer() {
                     <div className="space-y-8">
                         <div className="flex flex-col">
                             <span className="text-2xl font-heading font-black tracking-tight text-white leading-none">
-                                GAURI
+                                Gauri
                             </span>
-                            <span className="text-[10px] font-black tracking-[0.3em] text-primary uppercase mt-1">
-                                Matching Center
-                            </span>
+                            <span className="text-xs text-slate-300 font-semibold">Matching Center</span>
                         </div>
                         <p className="text-slate-300 text-sm leading-relaxed font-bold opacity-80">
-                            Pune's legacy in premium textiles since 2008. We specialize in matching, bespoke tailoring and handcrafted ethnic wear.
+                            Pune&apos;s legacy in premium textiles since 2008. We specialize in matching, bespoke tailoring and handcrafted ethnic wear.
                         </p>
                         <div className="flex items-center space-x-5">
                             <Link href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-all duration-300">

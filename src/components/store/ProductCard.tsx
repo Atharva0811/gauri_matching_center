@@ -5,7 +5,7 @@ import Button from "../ui/Button";
 import { urlFor } from "../../sanity/client";
 import { Dress, Accessory } from "../../lib/types";
 import { generateWhatsAppUrl } from "../../lib/whatsapp";
-import { ShoppingCart, ExternalLink, Heart } from "lucide-react";
+import { ShoppingCart, Heart } from "lucide-react";
 
 interface ProductCardProps {
     product: Dress | Accessory;
@@ -24,7 +24,7 @@ export default function ProductCard({ product, type }: ProductCardProps) {
     };
 
     return (
-        <div className="group relative bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <div className="group relative bg-white rounded-lg overflow-hidden border border-slate-100 shadow-[0_8px_30px_-12px_rgba(15,23,42,0.12)] hover:shadow-[0_30px_60px_-24px_rgba(15,23,42,0.18)] transform will-change-transform transition-premium">
             {/* Image Container */}
             <div className="relative aspect-[4/5] overflow-hidden bg-slate-50">
                 {product.image ? (
@@ -32,7 +32,7 @@ export default function ProductCard({ product, type }: ProductCardProps) {
                         src={urlFor(product.image).url()}
                         alt={product.name}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                 ) : (
                     <div className="w-full h-full flex items-center justify-center">
@@ -43,44 +43,45 @@ export default function ProductCard({ product, type }: ProductCardProps) {
                 {/* Trending/Bestseller Badge */}
                 {(product.isTrending || product.isBestseller) && !product.isSoldOut && (
                     <div className="absolute top-4 left-4 z-20">
-                        <div className={`px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.2em] shadow-lg flex items-center gap-2 ${product.isBestseller
-                            ? "bg-slate-950 text-white border border-white/20"
-                            : "bg-secondary text-slate-950"
+                        <div className={`px-4 py-1 rounded-md text-[10px] font-black uppercase tracking-wider shadow-md flex items-center gap-2 ${product.isBestseller
+                            ? "bg-foreground text-white"
+                            : "bg-accent text-foreground"
                             }`}>
-                            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                            {product.isBestseller ? "Bestseller" : "Trending Now"}
+                            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                            {product.isBestseller ? "Bestseller" : "Trending"}
                         </div>
                     </div>
                 )}
 
                 {/* Wishlist Button */}
-                <button className="absolute top-4 right-4 p-2.5 bg-white/90 backdrop-blur rounded-full shadow-sm text-slate-400 hover:text-red-500 transition-colors z-20">
+                <button className="absolute top-4 right-4 p-2.5 bg-white rounded-full shadow-sm text-slate-400 hover:text-red-500 transition-colors z-20">
                     <Heart className="w-5 h-5" />
                 </button>
 
                 {product.isSoldOut && (
-                    <div className="absolute inset-0 bg-slate-950/60 backdrop-blur-[2px] flex items-center justify-center z-10">
-                        <span className="text-white font-black text-xs uppercase tracking-[0.3em] bg-slate-950 px-6 py-3 rounded-full border border-white/20 shadow-2xl">
+                    <div className="absolute inset-0 bg-foreground/70 flex items-center justify-center z-10">
+                        <span className="text-white font-black text-xs uppercase tracking-wider bg-foreground/90 px-6 py-3 rounded-md border border-white/10 shadow-lg">
                             Sold Out
                         </span>
                     </div>
                 )}
 
                 {/* Meta Badge - Price focus */}
-                <div className="absolute bottom-4 left-4 font-black bg-white shadow-lg px-4 py-2 rounded-xl text-slate-950 text-sm tracking-tight z-10 border border-slate-100 flex items-center gap-1.5">
-                    <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Starts at</span>
-                    ₹{product.price}
+                <div className="absolute bottom-4 left-4 z-10">
+                    <div className="px-3 py-1 rounded-md bg-accent text-foreground font-black text-sm tracking-tight shadow-sm border border-white/20">
+                        ₹{product.price}
+                    </div>
                 </div>
             </div>
 
             {/* Content Container */}
             <div className="p-6 md:p-7">
                 <div className="mb-3">
-                    <h3 className="text-xl font-heading font-black text-slate-950 group-hover:text-primary transition-colors leading-tight tracking-tight">
+                    <h3 className="text-lg md:text-xl font-heading font-black text-foreground group-hover:text-primary transition-colors leading-tight tracking-tight">
                         {product.name}
                     </h3>
                 </div>
-                <p className="text-sm text-slate-800 line-clamp-2 mb-8 font-medium leading-relaxed opacity-90">
+                <p className="text-sm text-slate-700 line-clamp-2 mb-6 font-medium leading-relaxed opacity-95">
                     {product.description || "Exquisite textile selection, handpicked for quality and comfort."}
                 </p>
 
@@ -89,10 +90,10 @@ export default function ProductCard({ product, type }: ProductCardProps) {
                     disabled={product.isSoldOut}
                     variant={product.isSoldOut ? "outline" : "primary"}
                     fullWidth
-                    className="flex items-center justify-center gap-3 py-4 text-[11px] tracking-[0.2em] shadow-none hover:shadow-xl transition-all"
+                    className="flex items-center justify-center gap-3 py-3 text-[12px] tracking-wider shadow-none hover:shadow-md"
                 >
-                    <ShoppingCart className="w-4 h-4" />
-                    <span>{product.isSoldOut ? "STAY TUNED" : "CLAIM THIS LOOK"}</span>
+                        <ShoppingCart className="w-4 h-4" />
+                        <span>{product.isSoldOut ? "STAY TUNED" : "BUY ON WHATSAPP"}</span>
                 </Button>
             </div>
         </div>

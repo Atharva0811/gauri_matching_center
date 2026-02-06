@@ -1,7 +1,7 @@
 export interface Dress {
     _id: string;
     name: string;
-    image: any;
+    image: string;
     price: number;
     description?: string;
     isSoldOut: boolean;
@@ -13,7 +13,7 @@ export interface Dress {
 export interface Accessory {
     _id: string;
     name: string;
-    image: any;
+    image: unknown;
     price: number;
     description?: string;
     isSoldOut: boolean;

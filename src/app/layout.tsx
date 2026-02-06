@@ -1,6 +1,6 @@
 import "./globals.css";
-import type { Metadata } from "next";
 import { Nunito, Rubik } from "next/font/google";
+import AnnouncementBar from "@/components/ui/AnnouncementBar";
 
 const nunito = Nunito({
     subsets: ["latin"],
@@ -14,10 +14,10 @@ const rubik = Rubik({
     weight: ["400", "500", "600", "700"],
 });
 
-export const metadata: Metadata = {
-    title: "Gauri Matching Center | Premium Women's Boutique in Pune",
+export const metadata = {
+    title: "Gauri Matching Center",
     description:
-        "Gauri Matching Center offers premium sarees, kurtis, dress materials & custom matching in Pune. Trusted boutique for women since 2008.",
+        "Gauri Matching Center — Premium ethnic wear & tailoring",
     keywords: [
         "Gauri Matching Center",
         "Women Boutique Pune",
@@ -27,10 +27,11 @@ export const metadata: Metadata = {
     ],
     openGraph: {
         title: "Gauri Matching Center",
-        description: "Premium Women's Boutique in Pune",
-        images: ["/logo.png"],
+        description: "Premium ethnic wear & tailoring",
+        images: ["/logo.webp"],
     },
 };
+
 
 export default function RootLayout({
     children,
@@ -40,8 +41,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${nunito.variable} ${rubik.variable} font-sans antialiased bg-[#fafafa] text-gray-800`}
+                className={`${nunito.variable} ${rubik.variable} font-sans antialiased bg-background text-foreground`}
             >
+                {/* <AnnouncementBar /> */}
                 {children}
             </body>
         </html>

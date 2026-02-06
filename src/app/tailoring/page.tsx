@@ -2,10 +2,9 @@ import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
-import ProductCard from "@/components/store/ProductCard";
 import { client } from "@/sanity/client";
 import { TailoringService } from "@/lib/types";
-import { Scissors, Clock, Sparkles, ShieldCheck } from "lucide-react";
+import { Scissors, Clock, Sparkles } from "lucide-react";
 
 export const revalidate = 60; // Revalidate every minute
 
@@ -91,7 +90,7 @@ export default async function TailoringPage() {
                 {/* Engagement Section */}
                 <div className="mt-40 border-t border-slate-100 pt-32 text-center pb-16">
                     <blockquote className="text-3xl md:text-5xl font-heading font-black text-slate-950 tracking-tighter italic max-w-4xl mx-auto mb-16 leading-tight">
-                        "Elegance is the only beauty that <span className="text-secondary underline decoration-primary/20 decoration-8 underline-offset-4">never fades.</span>"
+                        &quot;Elegance is the only beauty that <span className="text-secondary underline decoration-primary/20 decoration-8 underline-offset-4">never fades.</span>&quot;
                     </blockquote>
                     <div className="flex flex-wrap justify-center gap-12 md:gap-24">
                         <div className="flex flex-col items-center">

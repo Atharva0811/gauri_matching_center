@@ -1,3 +1,5 @@
+import { hostname } from 'os';
+
 /** @type {import('next').NextProp} */
 const nextConfig = {
     images: {
@@ -6,6 +8,10 @@ const nextConfig = {
                 protocol: "https",
                 hostname: "cdn.sanity.io",
             },
+            {
+                protocol: "https",
+                hostname: "pehrvaa.com"
+            }
         ],
     },
 };
