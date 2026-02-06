@@ -1,6 +1,5 @@
 import "./globals.css";
 import { Nunito, Rubik } from "next/font/google";
-import AnnouncementBar from "@/components/ui/AnnouncementBar";
 
 const nunito = Nunito({
     subsets: ["latin"],

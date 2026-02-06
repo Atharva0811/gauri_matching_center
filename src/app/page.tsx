@@ -1,22 +1,17 @@
-import { client } from "@/sanity/client";
 import { Dress } from "@/lib/types";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
 
 import {
   Search,
   ShoppingCart,
   User,
-  Menu,
-  X,
   Truck,
   RefreshCw,
   Shield,
   Headphones,
 } from "lucide-react";
 
-import { urlFor } from "@/sanity/client";
 import Slideshow from "@/components/ui/Slideshow";
 
 export const revalidate = 60;
@@ -25,7 +20,6 @@ export const revalidate = 60;
    HOME PAGE
 ================================ */
 export default async function Home() {
-  const query = `*[_type=="dress"] | order(_createdAt desc)[0...12]`;
   const dresses: Dress[] = [
     {
       _id: "4c778820-e432-4d7d-a536-bc212dc91931",
