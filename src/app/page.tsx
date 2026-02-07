@@ -56,7 +56,7 @@ export default async function Home() {
           _id: "a4a07b3f-d2f2-4b6f-bb02-a527029c9b2d",
           description:
             'Design: The top features a black base adorned with a charming floral "butti" or jaal print, often in contrasting white, maroon, or beige.\n\nNeckline & Sleeves: It typically has a mandarin collar (Chinese collar) or a square/V-neckline with a front button placket. The model is wearing a version with long or three-quarter sleeves.\n\nBottoms: It is frequently paired with white or off-white ankle-length trousers or straight-fit pants for a clean, modern look.\n\nFabric: Most commonly crafted from 100% premium cotton or cotton slub, making it breathable for casual and daily wear.',
-          image: "/collections/image5.png",
+          image: "/collections/image1.png",
           isSoldOut: false,
           name: "Black Floral Printed Short Kurta (or Kurti) with Contrast Trousers.",
           price: 2499,
@@ -65,7 +65,7 @@ export default async function Home() {
           _id: "a65718d9-bae3-43f6-8127-48eb19d95018",
           description:
             "Style: This is a contemporary Ethnic Co-ord Set consisting of a straight-fit long kurta and matching patterned trousers.\n\nDesign Description: * Kurta: A sleeveless, V-neck long kurta in a cream/beige base featuring a bold, all-over maroon floral print.\n\nTrousers: Matching ankle-length trousers (often referred to as cigarette pants or straight-cut palazzos) featuring a complementary geometric or ethnic pattern in the same maroon and beige palette.\n\nFabric: Typically made from breathable fabrics like Cotton, Rayon, or Viscose Slub, making it ideal for casual wear or office attire.",
-          image: "/collections/image6.png",
+          image: "/collections/image2.png",
           isSoldOut: false,
           name: "Floral Printed Sleeveless Kurta & Trousers Co-Ord Set.",
           price: 3999,
@@ -74,7 +74,7 @@ export default async function Home() {
           _id: "f6e0fe83-b608-47d5-beda-ad0ad57cc1b9",
           description:
             'Features a mandarin collar (Chinese collar) with a front button placket.\nThree-quarter sleeves and a hip-length "short kurta" or tunic silhouette.\nTraditional Ikat geometric print in shades of indigo and white/grey.',
-          image: "/collections/image7.png",
+          image: "/collections/image3.png",
           isSoldOut: false,
           name: "Blue & Indigo Ikat Printed Short Kurti (Tunic).",
           price: 1299,
@@ -92,7 +92,7 @@ export default async function Home() {
     <div className="min-h-screen bg-background text-foreground">
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-primaryBrand px-3 py-2 rounded shadow">Skip to content</a>
       {/* ================= HEADER ================= */}
-      <header className="sticky top-0 z-50 bg-white border-b w-screen">
+      <header className="sticky top-0 z-50 bg-white border-b">
         <div className="flex md:mx-auto px-4 sm:px-0 md:px-4 w-full">
           <div className="md:container flex items-center md:justify-between sm:justify-evenly justify-between w-full">
             {/* Logo */}
