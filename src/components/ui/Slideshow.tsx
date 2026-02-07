@@ -31,7 +31,7 @@ export default function Slideshow({ slides, interval = 5000 }: { slides: Slide[]
 
   return (
     <section ref={containerRef} className="relative overflow-hidden" aria-label="Homepage slideshow">
-      <div className="relative h-[420px] md:h-[90vh]">
+      <div className="relative h-52 md:h-[60vh] lg:h-[90vh]">
         {slides.map((s, i) => (
           <a
             key={i}

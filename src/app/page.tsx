@@ -7,13 +7,6 @@ import type React from 'react';
 
 import Slideshow from "@/components/ui/Slideshow";
 import ProductCard from "@/components/store/ProductCard";
-import col1 from "../../public/collections/image1.png";
-import col2 from "../../public/collections/image2.png";
-import col3 from "../../public/collections/image3.png";
-import col4 from "../../public/collections/image4.png";
-import col5 from "../../public/collections/image5.png";
-import col6 from "../../public/collections/image6.png";
-import col7 from "../../public/collections/image7.png";
 
 import catSuit from "../../public/categories/suit-sets.png";
 import catLehengas from "../../public/categories/lehengas.png";
@@ -30,71 +23,71 @@ export const revalidate = 60;
    HOME PAGE
 ================================ */
 export default async function Home() {
-  const dresses: Dress[] = [
-    {
-      _id: "4c778820-e432-4d7d-a536-bc212dc91931",
-      description:
-        'Design: A vibrant sleeveless tunic or short kurta featuring a lively pattern of pink and orange floral hues.\n\nStyle: Designed as a "tunic co-ord," it often features a relaxed fit and can be paired with matching printed pants or solid white trousers for a fresh summer look.',
-      image: col1,
-      isSoldOut: false,
-      name: "Pink and Orange Floral Printed Sleeveless Tunic/Co-ord Set.",
-      price: 1299,
-    },
-    {
-      _id: "a28091e6-7669-41b5-9b6b-23f87e7512c8",
-      description:
-        "Top: A calf-length straight-fit kurta in turquoise blue, adorned with all-over floral or Bandhani-inspired prints.\n\nBottom: Often paired with contrasting chevron (zigzag) or matching floral printed trousers.\n\nDetails: May feature delicate thread work, sequins, or tassel detailing on the neckline and dupatta.",
-      image: col2,
-      isSoldOut: false,
-      name: "Turquoise Blue Floral Printed Kurta Set with Chevron Pants.",
-      price: 3299,
-    },
-    {
-      _id: "48096ec8-8dd6-4652-a570-c56db0cce7a4",
-      description:
-        "Design: A rich wine-colored flared (A-line) kurta featuring intricate floral embroidery on the chest/yoke area.\n\nSet: Often includes matching wine trousers and a coordinating dupatta, sometimes with multicolored floral patterns to complement the embroidery.\n\nFabric: Typically made from premium fabrics like Roman silk, chiffon, or French crepe for a sophisticated, formal appearance.",
-      image: col3,
-      isSoldOut: false,
-      name: "Wine Solid Flared Kurta with Embroidered Yoke and Matching Dupatta.",
-      price: 5299,
-    },
-    {
-      _id: "45789ab6-c588-4d2a-a06c-7e60e16a2439",
-      description:
-        "Top: A white-based kurta with a vibrant blue floral print, often featuring a flared hemline, V-neck, and lace-trimmed sleeves.\n\nBottom: Unique matching dhoti-style pants that provide a contemporary fusion twist to the ethnic look.\n\nBest Use: This set is popular for festive occasions, daily office wear, or casual outings due to its comfortable and stylish silhouette.",
-      image: col4,
-      isSoldOut: false,
-      name: "Blue & White Floral Printed Kurta with Dhoti Pants Set.",
-      price: 4599,
-    },
-    {
-      _id: "a4a07b3f-d2f2-4b6f-bb02-a527029c9b2d",
-      description:
-        'Design: The top features a black base adorned with a charming floral "butti" or jaal print, often in contrasting white, maroon, or beige.\n\nNeckline & Sleeves: It typically has a mandarin collar (Chinese collar) or a square/V-neckline with a front button placket. The model is wearing a version with long or three-quarter sleeves.\n\nBottoms: It is frequently paired with white or off-white ankle-length trousers or straight-fit pants for a clean, modern look.\n\nFabric: Most commonly crafted from 100% premium cotton or cotton slub, making it breathable for casual and daily wear.',
-      image: col5,
-      isSoldOut: false,
-      name: "Black Floral Printed Short Kurta (or Kurti) with Contrast Trousers.",
-      price: 2499,
-    },
-    {
-      _id: "a65718d9-bae3-43f6-8127-48eb19d95018",
-      description:
-        "Style: This is a contemporary Ethnic Co-ord Set consisting of a straight-fit long kurta and matching patterned trousers.\n\nDesign Description: * Kurta: A sleeveless, V-neck long kurta in a cream/beige base featuring a bold, all-over maroon floral print.\n\nTrousers: Matching ankle-length trousers (often referred to as cigarette pants or straight-cut palazzos) featuring a complementary geometric or ethnic pattern in the same maroon and beige palette.\n\nFabric: Typically made from breathable fabrics like Cotton, Rayon, or Viscose Slub, making it ideal for casual wear or office attire.",
-      image: col6,
-      isSoldOut: false,
-      name: "Floral Printed Sleeveless Kurta & Trousers Co-Ord Set.",
-      price: 3999,
-    },
-    {
-      _id: "f6e0fe83-b608-47d5-beda-ad0ad57cc1b9",
-      description:
-        'Features a mandarin collar (Chinese collar) with a front button placket.\nThree-quarter sleeves and a hip-length "short kurta" or tunic silhouette.\nTraditional Ikat geometric print in shades of indigo and white/grey.',
-      image: col7,
-      isSoldOut: false,
-      name: "Blue & Indigo Ikat Printed Short Kurti (Tunic).",
-      price: 1299,
-    },
-  ];
+      const dresses: Dress[] = [
+        {
+          _id: "4c778820-e432-4d7d-a536-bc212dc91931",
+          description:
+            'Design: A vibrant sleeveless tunic or short kurta featuring a lively pattern of pink and orange floral hues.\n\nStyle: Designed as a "tunic co-ord," it often features a relaxed fit and can be paired with matching printed pants or solid white trousers for a fresh summer look.',
+          image: "/collections/image1.png",
+          isSoldOut: false,
+          name: "Pink and Orange Floral Printed Sleeveless Tunic/Co-ord Set.",
+          price: 1299,
+        },
+        {
+          _id: "a28091e6-7669-41b5-9b6b-23f87e7512c8",
+          description:
+            "Top: A calf-length straight-fit kurta in turquoise blue, adorned with all-over floral or Bandhani-inspired prints.\n\nBottom: Often paired with contrasting chevron (zigzag) or matching floral printed trousers.\n\nDetails: May feature delicate thread work, sequins, or tassel detailing on the neckline and dupatta.",
+          image: "/collections/image2.png",
+          isSoldOut: false,
+          name: "Turquoise Blue Floral Printed Kurta Set with Chevron Pants.",
+          price: 3299,
+        },
+        {
+          _id: "48096ec8-8dd6-4652-a570-c56db0cce7a4",
+          description:
+            "Design: A rich wine-colored flared (A-line) kurta featuring intricate floral embroidery on the chest/yoke area.\n\nSet: Often includes matching wine trousers and a coordinating dupatta, sometimes with multicolored floral patterns to complement the embroidery.\n\nFabric: Typically made from premium fabrics like Roman silk, chiffon, or French crepe for a sophisticated, formal appearance.",
+          image: "/collections/image3.png",
+          isSoldOut: false,
+          name: "Wine Solid Flared Kurta with Embroidered Yoke and Matching Dupatta.",
+          price: 5299,
+        },
+        {
+          _id: "45789ab6-c588-4d2a-a06c-7e60e16a2439",
+          description:
+            "Top: A white-based kurta with a vibrant blue floral print, often featuring a flared hemline, V-neck, and lace-trimmed sleeves.\n\nBottom: Unique matching dhoti-style pants that provide a contemporary fusion twist to the ethnic look.\n\nBest Use: This set is popular for festive occasions, daily office wear, or casual outings due to its comfortable and stylish silhouette.",
+          image: "/collections/image4.png",
+          isSoldOut: false,
+          name: "Blue & White Floral Printed Kurta with Dhoti Pants Set.",
+          price: 4599,
+        },
+        {
+          _id: "a4a07b3f-d2f2-4b6f-bb02-a527029c9b2d",
+          description:
+            'Design: The top features a black base adorned with a charming floral "butti" or jaal print, often in contrasting white, maroon, or beige.\n\nNeckline & Sleeves: It typically has a mandarin collar (Chinese collar) or a square/V-neckline with a front button placket. The model is wearing a version with long or three-quarter sleeves.\n\nBottoms: It is frequently paired with white or off-white ankle-length trousers or straight-fit pants for a clean, modern look.\n\nFabric: Most commonly crafted from 100% premium cotton or cotton slub, making it breathable for casual and daily wear.',
+          image: "/collections/image5.png",
+          isSoldOut: false,
+          name: "Black Floral Printed Short Kurta (or Kurti) with Contrast Trousers.",
+          price: 2499,
+        },
+        {
+          _id: "a65718d9-bae3-43f6-8127-48eb19d95018",
+          description:
+            "Style: This is a contemporary Ethnic Co-ord Set consisting of a straight-fit long kurta and matching patterned trousers.\n\nDesign Description: * Kurta: A sleeveless, V-neck long kurta in a cream/beige base featuring a bold, all-over maroon floral print.\n\nTrousers: Matching ankle-length trousers (often referred to as cigarette pants or straight-cut palazzos) featuring a complementary geometric or ethnic pattern in the same maroon and beige palette.\n\nFabric: Typically made from breathable fabrics like Cotton, Rayon, or Viscose Slub, making it ideal for casual wear or office attire.",
+          image: "/collections/image6.png",
+          isSoldOut: false,
+          name: "Floral Printed Sleeveless Kurta & Trousers Co-Ord Set.",
+          price: 3999,
+        },
+        {
+          _id: "f6e0fe83-b608-47d5-beda-ad0ad57cc1b9",
+          description:
+            'Features a mandarin collar (Chinese collar) with a front button placket.\nThree-quarter sleeves and a hip-length "short kurta" or tunic silhouette.\nTraditional Ikat geometric print in shades of indigo and white/grey.',
+          image: "/collections/image7.png",
+          isSoldOut: false,
+          name: "Blue & Indigo Ikat Printed Short Kurti (Tunic).",
+          price: 1299,
+        },
+      ];
 
   const features: Array<[React.ComponentType<React.SVGProps<SVGSVGElement>>, string, string]> = [
     [Truck, "Free Shipping", "Above ₹999"],
@@ -216,42 +209,42 @@ export default async function Home() {
             {[
               {
                 name: "Suit Sets",
-                image: catSuit,
+                image: "/categories/suit-sets.png",
                 link: "/collections/suit-sets",
               },
               {
                 name: "Lehengas",
-                image: catLehengas,
+                image: "/categories/lehengas.png",
                 link: "/collections/lehengas",
               },
               {
                 name: "Indo-Western",
-                image: catIndo,
+                image: "/categories/indo-western.png",
                 link: "/collections/indo-western",
               },
               {
                 name: "Loungewear",
-                image: catLounge,
+                image: "/categories/loungewear.png",
                 link: "/collections/loungewear",
               },
               {
                 name: "Cotton Pants",
-                image: catCotton,
+                image: "/categories/cotton-pants.png",
                 link: "/collections/classic-cotton-pants",
               },
               {
                 name: "Festive Wear",
-                image: catFestive,
+                image: "/categories/festive.png",
                 link: "/collections/festive",
               },
               {
                 name: "New Arrivals",
-                image: catNew,
+                image: "/categories/new-arrivals.png",
                 link: "/collections/new-arrivals",
               },
               {
                 name: "Best Sellers",
-                image: catBest,
+                image: "/categories/bestsellers.png",
                 link: "/collections/bestsellers",
               },
             ].map((cat) => (
@@ -266,7 +259,6 @@ export default async function Home() {
                     src={cat.image}
                     alt={cat.name}
                     fill
-                    placeholder="blur"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
 
@@ -328,7 +320,7 @@ export default async function Home() {
           {/* Products Panel */}
           <div className="bg-white/80 backdrop-blur rounded-3xl p-4 md:p-6 shadow-lg border border-primaryBrand/10">
             {/* Grid: two columns on small screens for better mobile scanning */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
               {dresses.map((dress) => (
                 <ProductCard key={dress._id} product={dress} />
               ))}
