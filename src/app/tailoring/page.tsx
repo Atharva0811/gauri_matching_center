@@ -2,16 +2,13 @@ import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
-import { client } from "@/sanity/client";
 import { TailoringService } from "@/lib/types";
 import { Scissors, Clock, Sparkles } from "lucide-react";
 
 export const revalidate = 60; // Revalidate every minute
 
 export default async function TailoringPage() {
-    const query = `*[_type == "tailoring"] | order(basePrice asc)`;
-    const services: TailoringService[] = await client.fetch(query);
-
+    const services:TailoringService[] = [];
     return (
         <div className="min-h-screen bg-white">
             <Header />

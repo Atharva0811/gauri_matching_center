@@ -3,16 +3,13 @@ import Footer from "@/components/ui/Footer";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import ProductCard from "@/components/store/ProductCard";
-import { client } from "@/sanity/client";
 import { Accessory } from "@/lib/types";
 import { Sparkles } from "lucide-react";
 
 export const revalidate = 60; // Revalidate every minute
 
 export default async function AccessoriesPage() {
-    const query = `*[_type == "accessory"] | order(_createdAt desc)`;
-    const accessories: Accessory[] = await client.fetch(query);
-
+    const accessories: Accessory[] = [];
     return (
         <div className="min-h-screen bg-white">
             <Header />
