@@ -8,14 +8,6 @@ import type React from 'react';
 import Slideshow from "@/components/ui/Slideshow";
 import ProductCard from "@/components/store/ProductCard";
 
-import catSuit from "../../public/categories/suit-sets.png";
-import catLehengas from "../../public/categories/lehengas.png";
-import catIndo from "../../public/categories/indo-western.png";
-import catLounge from "../../public/categories/loungewear.png";
-import catCotton from "../../public/categories/cotton-pants.png";
-import catFestive from "../../public/categories/festive.png";
-import catNew from "../../public/categories/new-arrivals.png";
-import catBest from "../../public/categories/bestsellers.png";
 
 export const revalidate = 60;
 
