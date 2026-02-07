@@ -92,9 +92,9 @@ export default async function Home() {
     <div className="min-h-screen bg-background text-foreground">
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-primaryBrand px-3 py-2 rounded shadow">Skip to content</a>
       {/* ================= HEADER ================= */}
-      <header className="sticky top-0 z-50 bg-white border-b">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
+      <header className="sticky top-0 z-50 bg-white border-b w-screen">
+        <div className="flex md:mx-auto px-4 sm:px-0 md:px-4 w-full">
+          <div className="md:container flex items-center md:justify-between sm:justify-evenly justify-between w-full">
             {/* Logo */}
             <Link href="/">
               <Image
@@ -107,7 +107,7 @@ export default async function Home() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav role="navigation" aria-label="Primary" className="hidden md:flex gap-6 text-sm font-semibold">
+            <nav role="navigation" aria-label="Primary" className="hidden sm:flex gap-x-4 md:gap-6 sm:text-xs md:text-sm font-semibold">
               {[
                 ["Suit Sets", "/collections/suit-sets"],
                 ["Dresses", "/collections/dresses"],
@@ -126,7 +126,7 @@ export default async function Home() {
             </nav>
 
             {/* Icons */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1 md:gap-3">
               <button aria-label="Search" className="p-2 hover:bg-muted rounded focus:outline-none focus:ring-2 focus:ring-primaryBrand/40">
                 <Search size={20} />
               </button>

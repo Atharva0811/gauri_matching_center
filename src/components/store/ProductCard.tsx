@@ -37,7 +37,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="group relative bg-white rounded-lg overflow-hidden border border-slate-100 shadow-[0_8px_30px_-12px_rgba(15,23,42,0.12)] hover:shadow-[0_30px_60px_-24px_rgba(15,23,42,0.18)] transform will-change-transform transition-premium">
       {/* Image Container */}
-      <div className="relative aspect-[4/5] overflow-hidden bg-slate-50">
+      <div className="relative aspect-4/5 overflow-hidden bg-slate-50">
         {product.image ? (
           <Image
             src={imageProp as string | StaticImageData}
