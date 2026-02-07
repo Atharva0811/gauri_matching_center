@@ -1,7 +1,9 @@
+import type { StaticImageData } from "next/image";
+
 export interface Dress {
     _id: string;
     name: string;
-    image: string;
+    image: string | StaticImageData | Record<string, unknown>;
     price: number;
     description?: string;
     isSoldOut: boolean;

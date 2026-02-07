@@ -54,6 +54,8 @@ export default {
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
+        body: ["var(--font-nunito)", "var(--font-rubik)", "system-ui"],
+        heading: ["var(--font-rubik)", "system-ui", "sans-serif"],
       },
       container: {
         center: true,

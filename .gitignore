@@ -9,6 +9,7 @@
 # next.js
 /design-system/
 /.agent/
+/.github/
 /.next/
 /out/
 

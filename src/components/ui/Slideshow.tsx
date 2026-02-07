@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 
 type Slide = {
-  src: string;
+  src: string | StaticImageData; // allow StaticImageData or string
   alt?: string;
   href?: string;
 };
@@ -22,7 +22,7 @@ export default function Slideshow({ slides, interval = 5000 }: { slides: Slide[]
   }, [slides.length, interval]);
 
   function go(i: number) {
-    setIndex((prev) => {
+    setIndex(() => {
       if (i < 0) return slides.length - 1;
       if (i >= slides.length) return 0;
       return i;
@@ -31,7 +31,7 @@ export default function Slideshow({ slides, interval = 5000 }: { slides: Slide[]
 
   return (
     <section ref={containerRef} className="relative overflow-hidden" aria-label="Homepage slideshow">
-      <div className="relative h-[420px] md:h-[520px]">
+      <div className="relative h-[420px] md:h-[90vh]">
         {slides.map((s, i) => (
           <a
             key={i}
@@ -46,6 +46,8 @@ export default function Slideshow({ slides, interval = 5000 }: { slides: Slide[]
               sizes="100vw"
               className="object-cover w-full h-full"
               priority={i === 0}
+              loading={i === 0 ? "eager" : "lazy"}
+              placeholder={typeof s.src === "string" ? "empty" : "blur"}
             />
           </a>
         ))}

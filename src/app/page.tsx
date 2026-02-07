@@ -2,17 +2,27 @@ import { Dress } from "@/lib/types";
 import Link from "next/link";
 import Image from "next/image";
 
-import {
-  Search,
-  ShoppingCart,
-  User,
-  Truck,
-  RefreshCw,
-  Shield,
-  Headphones,
-} from "lucide-react";
+import { Search, ShoppingCart, User, Truck, RefreshCw, Shield, Headphones } from "lucide-react";
+import type React from 'react';
 
 import Slideshow from "@/components/ui/Slideshow";
+import ProductCard from "@/components/store/ProductCard";
+import col1 from "../../public/collections/image1.png";
+import col2 from "../../public/collections/image2.png";
+import col3 from "../../public/collections/image3.png";
+import col4 from "../../public/collections/image4.png";
+import col5 from "../../public/collections/image5.png";
+import col6 from "../../public/collections/image6.png";
+import col7 from "../../public/collections/image7.png";
+
+import catSuit from "../../public/categories/suit-sets.png";
+import catLehengas from "../../public/categories/lehengas.png";
+import catIndo from "../../public/categories/indo-western.png";
+import catLounge from "../../public/categories/loungewear.png";
+import catCotton from "../../public/categories/cotton-pants.png";
+import catFestive from "../../public/categories/festive.png";
+import catNew from "../../public/categories/new-arrivals.png";
+import catBest from "../../public/categories/bestsellers.png";
 
 export const revalidate = 60;
 
@@ -25,7 +35,7 @@ export default async function Home() {
       _id: "4c778820-e432-4d7d-a536-bc212dc91931",
       description:
         'Design: A vibrant sleeveless tunic or short kurta featuring a lively pattern of pink and orange floral hues.\n\nStyle: Designed as a "tunic co-ord," it often features a relaxed fit and can be paired with matching printed pants or solid white trousers for a fresh summer look.',
-      image: "/collections/image1.png",
+      image: col1,
       isSoldOut: false,
       name: "Pink and Orange Floral Printed Sleeveless Tunic/Co-ord Set.",
       price: 1299,
@@ -34,7 +44,7 @@ export default async function Home() {
       _id: "a28091e6-7669-41b5-9b6b-23f87e7512c8",
       description:
         "Top: A calf-length straight-fit kurta in turquoise blue, adorned with all-over floral or Bandhani-inspired prints.\n\nBottom: Often paired with contrasting chevron (zigzag) or matching floral printed trousers.\n\nDetails: May feature delicate thread work, sequins, or tassel detailing on the neckline and dupatta.",
-      image: "/collections/image2.png",
+      image: col2,
       isSoldOut: false,
       name: "Turquoise Blue Floral Printed Kurta Set with Chevron Pants.",
       price: 3299,
@@ -43,7 +53,7 @@ export default async function Home() {
       _id: "48096ec8-8dd6-4652-a570-c56db0cce7a4",
       description:
         "Design: A rich wine-colored flared (A-line) kurta featuring intricate floral embroidery on the chest/yoke area.\n\nSet: Often includes matching wine trousers and a coordinating dupatta, sometimes with multicolored floral patterns to complement the embroidery.\n\nFabric: Typically made from premium fabrics like Roman silk, chiffon, or French crepe for a sophisticated, formal appearance.",
-      image: "/collections/image3.png",
+      image: col3,
       isSoldOut: false,
       name: "Wine Solid Flared Kurta with Embroidered Yoke and Matching Dupatta.",
       price: 5299,
@@ -52,7 +62,7 @@ export default async function Home() {
       _id: "45789ab6-c588-4d2a-a06c-7e60e16a2439",
       description:
         "Top: A white-based kurta with a vibrant blue floral print, often featuring a flared hemline, V-neck, and lace-trimmed sleeves.\n\nBottom: Unique matching dhoti-style pants that provide a contemporary fusion twist to the ethnic look.\n\nBest Use: This set is popular for festive occasions, daily office wear, or casual outings due to its comfortable and stylish silhouette.",
-      image: "/collections/image4.png",
+      image: col4,
       isSoldOut: false,
       name: "Blue & White Floral Printed Kurta with Dhoti Pants Set.",
       price: 4599,
@@ -61,7 +71,7 @@ export default async function Home() {
       _id: "a4a07b3f-d2f2-4b6f-bb02-a527029c9b2d",
       description:
         'Design: The top features a black base adorned with a charming floral "butti" or jaal print, often in contrasting white, maroon, or beige.\n\nNeckline & Sleeves: It typically has a mandarin collar (Chinese collar) or a square/V-neckline with a front button placket. The model is wearing a version with long or three-quarter sleeves.\n\nBottoms: It is frequently paired with white or off-white ankle-length trousers or straight-fit pants for a clean, modern look.\n\nFabric: Most commonly crafted from 100% premium cotton or cotton slub, making it breathable for casual and daily wear.',
-      image: "/collections/image5.png",
+      image: col5,
       isSoldOut: false,
       name: "Black Floral Printed Short Kurta (or Kurti) with Contrast Trousers.",
       price: 2499,
@@ -70,7 +80,7 @@ export default async function Home() {
       _id: "a65718d9-bae3-43f6-8127-48eb19d95018",
       description:
         "Style: This is a contemporary Ethnic Co-ord Set consisting of a straight-fit long kurta and matching patterned trousers.\n\nDesign Description: * Kurta: A sleeveless, V-neck long kurta in a cream/beige base featuring a bold, all-over maroon floral print.\n\nTrousers: Matching ankle-length trousers (often referred to as cigarette pants or straight-cut palazzos) featuring a complementary geometric or ethnic pattern in the same maroon and beige palette.\n\nFabric: Typically made from breathable fabrics like Cotton, Rayon, or Viscose Slub, making it ideal for casual wear or office attire.",
-      image: "/collections/image6.png",
+      image: col6,
       isSoldOut: false,
       name: "Floral Printed Sleeveless Kurta & Trousers Co-Ord Set.",
       price: 3999,
@@ -79,22 +89,23 @@ export default async function Home() {
       _id: "f6e0fe83-b608-47d5-beda-ad0ad57cc1b9",
       description:
         'Features a mandarin collar (Chinese collar) with a front button placket.\nThree-quarter sleeves and a hip-length "short kurta" or tunic silhouette.\nTraditional Ikat geometric print in shades of indigo and white/grey.',
-      image: "/collections/image7.png",
+      image: col7,
       isSoldOut: false,
       name: "Blue & Indigo Ikat Printed Short Kurti (Tunic).",
       price: 1299,
     },
   ];
 
-  const features = [
+  const features: Array<[React.ComponentType<React.SVGProps<SVGSVGElement>>, string, string]> = [
     [Truck, "Free Shipping", "Above ₹999"],
     [RefreshCw, "Easy Returns", "7 Days Policy"],
     [Shield, "Secure Payment", "100% Safe"],
     [Headphones, "Support", "24/7 Help"],
   ];
 
-  return (
+    return (
     <div className="min-h-screen bg-background text-foreground">
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-primaryBrand px-3 py-2 rounded shadow">Skip to content</a>
       {/* ================= HEADER ================= */}
       <header className="sticky top-0 z-50 bg-white border-b">
         <div className="container mx-auto px-4">
@@ -111,7 +122,7 @@ export default async function Home() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex gap-6 text-sm font-semibold">
+            <nav role="navigation" aria-label="Primary" className="hidden md:flex gap-6 text-sm font-semibold">
               {[
                 ["Suit Sets", "/collections/suit-sets"],
                 ["Dresses", "/collections/dresses"],
@@ -131,17 +142,18 @@ export default async function Home() {
 
             {/* Icons */}
             <div className="flex items-center gap-3">
-              <button className="p-2 hover:bg-muted rounded">
+              <button aria-label="Search" className="p-2 hover:bg-muted rounded focus:outline-none focus:ring-2 focus:ring-primaryBrand/40">
                 <Search size={20} />
               </button>
 
-              <Link href="/account" className="p-2 hover:bg-muted rounded">
+              <Link href="/account" aria-label="Account" className="p-2 hover:bg-muted rounded focus:outline-none focus:ring-2 focus:ring-primaryBrand/40">
                 <User size={20} />
               </Link>
 
               <Link
                 href="/cart"
-                className="p-2 hover:bg-muted rounded relative"
+                aria-label="Cart"
+                className="p-2 hover:bg-muted rounded relative focus:outline-none focus:ring-2 focus:ring-primaryBrand/40"
               >
                 <ShoppingCart size={20} />
 
@@ -158,18 +170,9 @@ export default async function Home() {
       <section className="relative">
         <Slideshow
           slides={[
-            {
-              src: "https://pehrvaa.com/cdn/shop/files/Simple_Modern_Photo_Collage_Autumn_Fashion_Sale_Banner_1350_x_1950_px_8ffed061-4beb-4171-9eef-2700f2071459.png?v=1766423629",
-              href: "/collections/loungewear",
-            },
-            {
-              src: "https://pehrvaa.com/cdn/shop/files/BB.png?v=1766580942",
-              href: "/collections/suit-sets",
-            },
-            {
-              src: "https://pehrvaa.com/cdn/shop/files/Untitled_1400_x_700_px_1.png?v=1755870215",
-              href: "/collections/new-arrivals",
-            },
+            { src: "https://pehrvaa.com/cdn/shop/files/BB.png?v=1766580942&width=3840", href: "/collections/loungewear", alt: "Loungewear" },
+            { src: "https://pehrvaa.com/cdn/shop/files/Simple_Modern_Photo_Collage_Autumn_Fashion_Sale_Banner_1350_x_1950_px_8ffed061-4beb-4171-9eef-2700f2071459.png?v=1766423629&width=2000", href: "/collections/suit-sets", alt: "Suit Sets" },
+            { src: "https://pehrvaa.com/cdn/shop/files/Untitled_1400_x_700_px_1.png?v=1755870215&width=3840", href: "/collections/new-arrivals", alt: "New Arrivals" },
           ]}
         />
 
@@ -213,42 +216,42 @@ export default async function Home() {
             {[
               {
                 name: "Suit Sets",
-                image: "/categories/suit-sets.png",
+                image: catSuit,
                 link: "/collections/suit-sets",
               },
               {
                 name: "Lehengas",
-                image: "/categories/lehengas.png",
+                image: catLehengas,
                 link: "/collections/lehengas",
               },
               {
                 name: "Indo-Western",
-                image: "/categories/indo-western.png",
+                image: catIndo,
                 link: "/collections/indo-western",
               },
               {
                 name: "Loungewear",
-                image: "/categories/loungewear.png",
+                image: catLounge,
                 link: "/collections/loungewear",
               },
               {
                 name: "Cotton Pants",
-                image: "/categories/cotton-pants.png",
+                image: catCotton,
                 link: "/collections/classic-cotton-pants",
               },
               {
                 name: "Festive Wear",
-                image: "/categories/festive.png",
+                image: catFestive,
                 link: "/collections/festive",
               },
               {
                 name: "New Arrivals",
-                image: "/categories/new-arrivals.png",
+                image: catNew,
                 link: "/collections/new-arrivals",
               },
               {
                 name: "Best Sellers",
-                image: "/categories/bestsellers.png",
+                image: catBest,
                 link: "/collections/bestsellers",
               },
             ].map((cat) => (
@@ -258,11 +261,12 @@ export default async function Home() {
                 className="group relative rounded-2xl overflow-hidden shadow hover:shadow-xl transition"
               >
                 {/* Image */}
-                <div className="relative h-[20  0px] sm:h-[300px] lg:h-[400px]">
+                <div className="relative h-[200px] sm:h-[300px] lg:h-[400px]">
                   <Image
                     src={cat.image}
                     alt={cat.name}
                     fill
+                    placeholder="blur"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
 
@@ -283,7 +287,7 @@ export default async function Home() {
       </section>
 
       {/* ================= PRODUCTS ================= */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-orange-50 via-white to-yellow-50/40 relative">
+      <section id="main" className="py-16 md:py-20 bg-gradient-to-b from-orange-50 via-white to-yellow-50/40 relative">
         {/* Decorative Blur */}
         <div className="absolute top-20 left-10 w-40 h-40 bg-orange-200/30 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-40 h-40 bg-yellow-200/30 rounded-full blur-3xl" />
@@ -323,63 +327,11 @@ export default async function Home() {
 
           {/* Products Panel */}
           <div className="bg-white/80 backdrop-blur rounded-3xl p-4 md:p-6 shadow-lg border border-primaryBrand/10">
-            {/* Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
-              {dresses.map((dress) => {
-                const salePrice = Math.floor(dress.price * 0.6);
-
-                return (
-                  <article
-                    key={dress._id}
-                    className="group flex flex-col bg-white rounded-2xl border border-primaryBrand/10 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-                  >
-                    {/* Image */}
-                    <div className="relative h-[420px] w-full bg-linear-to-br from-orange-50 to-yellow-50 flex items-center justify-center overflow-hidden">
-                      {dress.image && (
-                        <Image
-                          src={dress.image}
-                          alt={dress.name}
-                          fill
-                          className="object-cover object-center group-hover:scale-105 transition"
-                        />
-                      )}
-
-                      {/* Badge */}
-                      <span className="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow">
-                        40% OFF
-                      </span>
-                    </div>
-
-                    {/* Info */}
-                    <div className="flex flex-col flex-1 p-4">
-                      <h3 className="line-clamp-2 min-h-[42px] font-serif text-sm md:text-base font-medium">
-                        {dress.name}
-                      </h3>
-
-                      {/* Price */}
-                      <div className="mt-2 flex gap-2 items-center">
-                        <span className="text-lg font-extrabold text-primaryBrand">
-                          ₹{salePrice}
-                        </span>
-
-                        <span className="text-xs line-through text-muted-foreground">
-                          ₹{dress.price}
-                        </span>
-                      </div>
-
-                      <div className="flex-1" />
-
-                      {/* CTA */}
-                      <Link
-                        href={`/product/${dress._id}`}
-                        className="mt-4 block w-full text-center py-2.5 rounded-lg border border-primaryBrand/40 text-primaryBrand font-semibold hover:bg-primaryBrand hover:text-white transition"
-                      >
-                        View Details
-                      </Link>
-                    </div>
-                  </article>
-                );
-              })}
+            {/* Grid: two columns on small screens for better mobile scanning */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
+              {dresses.map((dress) => (
+                <ProductCard key={dress._id} product={dress} />
+              ))}
             </div>
           </div>
         </div>
@@ -389,7 +341,7 @@ export default async function Home() {
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {features.map(([Icon, title, desc]: any) => (
+            {features.map(([Icon, title, desc]) => (
               <div key={title}>
                 <div className="w-14 h-14 mx-auto bg-white rounded-full flex items-center justify-center shadow mb-4">
                   <Icon className="w-7 h-7 text-primaryBrand" />
@@ -413,17 +365,21 @@ export default async function Home() {
             Subscribe for latest collections & discounts
           </p>
 
-          <div className="max-w-md mx-auto flex rounded overflow-hidden">
+          <form className="max-w-md mx-auto flex rounded overflow-hidden" aria-label="Subscribe to newsletter">
+            <label htmlFor="newsletter-email" className="sr-only">Email address</label>
             <input
+              id="newsletter-email"
+              name="email"
               type="email"
+              aria-required="true"
               placeholder="Your email"
-              className="flex-1 px-4 py-3 text-black border rounded-l"
+              className="flex-1 px-4 py-3 text-black border rounded-l focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primaryBrand/40"
             />
 
-            <button className="bg-black text-white px-6 font-semibold hover:opacity-90">
+            <button type="submit" className="bg-black text-white px-6 font-semibold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primaryBrand/40">
               Subscribe
             </button>
-          </div>
+          </form>
         </div>
       </section>
 

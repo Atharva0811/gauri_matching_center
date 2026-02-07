@@ -43,7 +43,7 @@ export default async function DressesPage() {
                 {dresses.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-20">
                         {dresses.map((dress) => (
-                            <ProductCard key={dress._id} product={dress} type="dress" />
+                            <ProductCard key={dress._id} product={dress} />
                         ))}
                     </div>
                 ) : (

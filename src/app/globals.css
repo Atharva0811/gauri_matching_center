@@ -81,5 +81,19 @@
   h3,
   h4 {
     @apply font-semibold tracking-tight;
+    font-family: var(--font-rubik), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+
+  /* Utility classes to use Tailwind font families */
+  .font-heading {
+    font-family: var(--font-rubik), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  .font-body {
+    font-family: var(--font-nunito), var(--font-rubik), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+
+  /* Make 'font-black' less heavy globally to avoid overly bold headings */
+  .font-black {
+    font-weight: 700 !important;
   }
 }

@@ -1,27 +1,36 @@
 "use client";
 
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Button from "../ui/Button";
 import { urlFor } from "../../sanity/client";
 import { Dress, Accessory } from "../../lib/types";
-import { generateWhatsAppUrl } from "../../lib/whatsapp";
 import { ShoppingCart, Heart } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface ProductCardProps {
     product: Dress | Accessory;
-    type: "dress" | "accessory";
 }
 
-export default function ProductCard({ product, type }: ProductCardProps) {
-    const handleWhatsAppClick = () => {
-        const url = generateWhatsAppUrl({
-            id: product._id,
-            name: product.name,
-            type: type,
-            price: product.price,
-        });
-        window.open(url, "_blank");
+export default function ProductCard({ product }: ProductCardProps) {
+    const router = useRouter();
+
+    const handleBuyNow = () => {
+        // navigate to product page; Razorpay flow will be integrated later
+        router.push(`/product/${product._id}`);
     };
+
+    // determine image prop for next/image
+    let imageProp: string | StaticImageData | Record<string, unknown> = "";
+
+    if (typeof product.image === "string") {
+        imageProp = product.image;
+    } else if (product.image && typeof product.image === "object" && "src" in (product.image as unknown as Record<string, unknown>)) {
+        imageProp = product.image as StaticImageData; // static import
+    } else {
+        // assume sanity image object
+        const sanImage = product.image as unknown as Record<string, unknown>;
+        imageProp = urlFor(sanImage).url();
+    }
 
     return (
         <div className="group relative bg-white rounded-lg overflow-hidden border border-slate-100 shadow-[0_8px_30px_-12px_rgba(15,23,42,0.12)] hover:shadow-[0_30px_60px_-24px_rgba(15,23,42,0.18)] transform will-change-transform transition-premium">
@@ -29,9 +38,10 @@ export default function ProductCard({ product, type }: ProductCardProps) {
             <div className="relative aspect-[4/5] overflow-hidden bg-slate-50">
                 {product.image ? (
                     <Image
-                        src={urlFor(product.image).url()}
+                        src={imageProp as string | StaticImageData}
                         alt={product.name}
                         fill
+                        placeholder={typeof imageProp === "string" ? "empty" : "blur"}
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                 ) : (
@@ -86,14 +96,14 @@ export default function ProductCard({ product, type }: ProductCardProps) {
                 </p>
 
                 <Button
-                    onClick={handleWhatsAppClick}
+                    onClick={handleBuyNow}
                     disabled={product.isSoldOut}
                     variant={product.isSoldOut ? "outline" : "primary"}
                     fullWidth
                     className="flex items-center justify-center gap-3 py-3 text-[12px] tracking-wider shadow-none hover:shadow-md"
                 >
                         <ShoppingCart className="w-4 h-4" />
-                        <span>{product.isSoldOut ? "STAY TUNED" : "BUY ON WHATSAPP"}</span>
+                        <span>{product.isSoldOut ? "STAY TUNED" : "BUY NOW"}</span>
                 </Button>
             </div>
         </div>

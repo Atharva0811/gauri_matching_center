@@ -43,7 +43,7 @@ export default async function AccessoriesPage() {
                 {accessories.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-20">
                         {accessories.map((acc) => (
-                            <ProductCard key={acc._id} product={acc} type="accessory" />
+                            <ProductCard key={acc._id} product={acc} />
                         ))}
                     </div>
                 ) : (

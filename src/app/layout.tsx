@@ -13,6 +13,8 @@ const rubik = Rubik({
     weight: ["400", "500", "600", "700"],
 });
 
+// Playfair removed to favor a friendly sans for headings (Rubik).
+
 export const metadata = {
     title: "Gauri Matching Center",
     description:
